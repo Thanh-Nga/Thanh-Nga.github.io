@@ -3,6 +3,47 @@
   <head>
     <script src="Website.js"></script>
     <link rel="stylesheet" href="website.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: LIGHTSALMON;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: INDIANRED;
+}
+
+.topnav a.active {
+  background-color: #LIGHTPINK;
+  color: INDIANRED;
+}
+</style>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
+    <style>
+      .map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+    <title>OpenLayers example</title>
+
     <style>
     		h1 {
     			color: ROSYBROWN;
@@ -14,12 +55,39 @@
     <body style="background-color:SNOW;">
   </head>
   <body>
+    <div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+
+<div style="padding-left:16px">
+</div>
+
+
     <!--<p>JavaScript can change HTML attribute values<p>-->
     <!--<button>HI</button>
 
     <button onclick="document.getElementById('myImage').src='0.png'">Turn On The Light</button>
     <img id="myImage" src="0-1.png" style="width:100px">
     <button onclick="document.getElementById('myImage').src='0-1'">Turn Off The Light</button>-->
+    <!--<h2>My Map</h2>-->
+    <div id="map" class="map"></div>
+    <script type="text/javascript">
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([37.41, 8.82]),
+          zoom: 4
+        })
+      });
+    </script>
 
     <center><img src="RunningGirl.jpeg"
     style="width:450px;height:300px;"><center>
@@ -27,7 +95,7 @@
     <div>
     </div>
     <a href="https://www.businessinsider.com/health-benefits-of-running-2018-4">Health Benefits<a/>
-      
+
     <div class="heading"><h2><p>So Why Should I Run?</p></h2></div>
       <h3><p class="text">Running is one of the most fundamental and primitive acts for humans, and is often
         what comes to mind when you think of exercise, for a good reason. So many people do it because they
