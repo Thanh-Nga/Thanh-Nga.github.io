@@ -34,15 +34,6 @@ body {
   color: INDIANRED;
 }
 </style>
-    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
-    <style>
-      .map {
-        height: 400px;
-        width: 100%;
-      }
-    </style>
-    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
-    <title>OpenLayers example</title>
 
     <style>
     		h1 {
@@ -55,6 +46,7 @@ body {
     <body style="background-color:SNOW;">
   </head>
   <body>
+
     <div class="topnav">
   <a class="active" href="#home">Home</a>
   <a href="#news">News</a>
@@ -64,17 +56,30 @@ body {
 
 <div style="padding-left:16px">
 </div>
+<link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
+<style>
+  .map {
+    height: 400px;
+    width: 100%;
+  }
+</style>
+<script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+<title>OpenLayers example</title>
 
+  <p>
+    <button onclick="panHome()">Go To London</button>
+  </p>
+  <div id="map" class="map"></div>
 
+  <footer>
     <!--<p>JavaScript can change HTML attribute values<p>-->
     <!--<button>HI</button>
 
     <button onclick="document.getElementById('myImage').src='0.png'">Turn On The Light</button>
     <img id="myImage" src="0-1.png" style="width:100px">
     <button onclick="document.getElementById('myImage').src='0-1'">Turn Off The Light</button>-->
-    <!--<h2>My Map</h2>-->
-    <div id="map" class="map"></div>
-    <script type="text/javascript">
+
+    <!-- <script type="text/javascript">
       var map = new ol.Map({
         target: 'map',
         layers: [
@@ -87,7 +92,9 @@ body {
           zoom: 4
         })
       });
-    </script>
+    </script> -->
+
+
 
     <center><img src="RunningGirl.jpeg"
     style="width:450px;height:300px;"><center>
